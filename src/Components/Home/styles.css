@@ -1,0 +1,21 @@
+.homeContainer{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../Assets/carbg.png");
+    background-repeat: no-repeat;
+    background-attachment:  fixed;
+    background-size: cover;
+    display: flex;
+}
+
+.sideBarContainer{
+    width: 20vw;
+    height: 100vh;
+    background-color: #225353;
+}
+
+.mainContainer{
+    width: 80vw;
+    height: 100vh;
+    /* background-color: wheat;; */
+}

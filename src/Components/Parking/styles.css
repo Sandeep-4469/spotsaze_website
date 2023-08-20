@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navBar{
+    color: black;
+    background-color: white;
+    margin: 2rem;
+    border-radius: .5rem;
+
+}
+
+.navList{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navItem{
+    font-size: 1.5rem;
+    padding: .5rem;
+    width: 10vw;
+    text-align: center;
+    border-radius: .5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown {
+    margin-left: 2rem;
+    position: relative;
+    display: inline-block;
+    color: black;
+}
+.dropdownSlots{
+    text-align: center;
+    font-weight: 900;;
+    width: 5vw;
+    font-size: 1.7rem;
+    padding-top: .3rem;
+}
+.dropdownlevel{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(198, 42, 42,0.7);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    width: 10vw;
+    padding: .5rem;
+
+}
+.dropdownHead{
+    display: flex;
+    font-size: 1.5rem;
+    background-color: #fff;
+    width: 15vw;
+    border-radius: .2rem;
+    
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 10.4vw;
+    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+
+  }
+  .dropdownItems{
+    padding: 1rem;
+
+  }
+
+  .dropdownItems:hover{
+    background-color: grey;
+  }
+  .parkingContainer{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .parkingImage{
+    width: 50vw;
+    height: 60vh;
+    border-radius: 1rem;
+  }
+  .parkingImageContainer{
+
+  }
+
+  .SlotsContainer{
+    width: 20vw;
+    height: 60vh;
+    background-color: rgba(217, 217, 217,0.5);
+    border-radius: 1rem;
+  }
+.slotHead{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: .5rem;
+    font-weight: 700;
+}
+.slotContent{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 500;
+}

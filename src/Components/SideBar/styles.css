@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    border: 0;
+    outline: 0;
+    
+
+}
+::-webkit-scrollbar {
+    width: .5rem;
+    border-radius: 1rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10rem;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10rem;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+.sideBarHeadContainer{
+    height: 23vh;
+}
+
+.sideBarMainHead{
+    font-size: 2.5rem;
+    color: white;
+    padding: 1rem;
+
+
+}
+.sideBarCompanyHead{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+
+}
+.sideBarCompaniesContainer{
+    background-color: rgba(255, 255, 255,0.2);
+    width: 20vw;
+    padding: 0;
+    height: 77vh;
+    overflow-x: hidden;
+    padding-top: 1rem;
+    border-radius: 1.3rem 1.3rem 0rem 0rem;
+
+}
+.searchInput{
+    background-color: rgba(255, 255, 255,0.7);
+    width: 85%;
+    padding: .6rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+
+}
+.searchInput::placeholder{
+    color: #5C5C5C;
+}
+.companiesContainer{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 18vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+}
+.companies{
+    padding: .5rem;
+    align-self: center;
+}
+
+.companiesActive{
+    background-color: rgba(198, 42, 42,0.4);
+    border-radius: .5rem;
+    padding: .5rem;
+    align-self: center;
+}
