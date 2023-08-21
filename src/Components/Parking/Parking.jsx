@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./styles.css"
 import { FaChevronDown } from "react-icons/fa";
 
-export default function Parking() {
+export default function Parking(props) {
     const [selected, setSelected] = useState(1)
     return (
         <div>
@@ -19,27 +19,33 @@ export default function Parking() {
                 <div className="dropdown">
                     <div className='dropdownHead'>
                         <div className='dropdownlevel'>
-                            <p>Level 1</p>
+                            <p>Level {props.selectedLevel}</p>
                             <FaChevronDown />
                         </div>
                         <p className='dropdownSlots'>5</p>
                     </div>
                     <div className="dropdown-content">
-                        <p className='dropdownItems'>Level 1</p>
-                        <p className='dropdownItems'>Level 2</p>
-                        <p className='dropdownItems'>Level 3</p>
+                        {props.companies[props.selectedComapany].slots.map((_,idx)=>{
+                            return(
+                                <p onClick={()=>{
+                                    props.setSelectedLevel(idx+1)
+                                    
+                                }} className='dropdownItems'>Level {idx+1}</p>
+                            )
+                        })}
+                      
                     </div>
                 </div>
             </div>
 
             <div className='parkingContainer'>
                 <div className='parkingImageContainer'>
-                    <img className='parkingImage' src={"https://8000-shashankcryptoco-psm02-66jig9x3id9.ws-us104.gitpod.io/video_feed1"} alt="Parking Image" />
+                    <img className='parkingImage' src={"https://8000-shashankcryptoco-psm02-66jig9x3id9.ws-us104.gitpod.io/video_feed1"} alt="Parking" />
                 </div>
                 <div className='SlotsContainer'>
                     <p className='slotHead'>Slot ID's</p>
                     <p className='slotContent'>G1</p>
-                    <p className='slotContent'>G2</p>
+                    <p className='slotContent'>G2</p>``
                     <p className='slotContent'>G3</p>
                     <p className='slotContent'>G4</p>
                 </div>

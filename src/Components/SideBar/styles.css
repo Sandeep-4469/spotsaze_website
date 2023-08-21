@@ -76,8 +76,8 @@
     font-weight: 500;
     width: 18vw;
     color: white;
-    display: flex;
-    flex-direction: column;
+    margin-left: 1rem;
+
     
 }
 .companies{
