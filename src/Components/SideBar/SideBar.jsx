@@ -14,11 +14,9 @@ export default function SideBar(props) {
         <div className='companiesContainer'>
           {
             props?.companies?.map((company, idx) => {
-              console.log(company)
               if (company?.name.toLowerCase().includes(props.searched.toLowerCase())) {
-                console.log("first")
                 return (
-                  <p onClick={() => {
+                  <p key={idx} onClick={() => {
                     props.setSelectedComapany(idx)
                     props.setSelectedLevel(1)
                   }} className={props.selectedComapany === idx ? "companiesActive" : 'companies'}>{company.name}</p>

@@ -1,9 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./styles.css"
 import { FaChevronDown } from "react-icons/fa";
+import axios from 'axios';
 
 export default function Parking(props) {
     const [selected, setSelected] = useState(1)
+    const [slots1, setSlots] = useState();
+    const [url, seturl] = useState();
+    useEffect(() => {
+
+        try {
+            axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/slots/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
+                console.log(res.data)
+                setSlots(res.data.slotname)
+            })
+
+            axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/video/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
+                console.log(res.data)
+                seturl(res.data)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+    }, [props.selectedComapany, props.selectedLevel])
     return (
         <div>
             <div style={{ display: 'flex', alignItems: "center", justifyContent: "flex-end" }}>
@@ -22,32 +42,35 @@ export default function Parking(props) {
                             <p>Level {props.selectedLevel}</p>
                             <FaChevronDown />
                         </div>
-                        <p className='dropdownSlots'>5</p>
+                        <p className='dropdownSlots'>{slots1.length}</p>
                     </div>
                     <div className="dropdown-content">
-                        {props.companies[props.selectedComapany].slots.map((_,idx)=>{
-                            return(
-                                <p onClick={()=>{
-                                    props.setSelectedLevel(idx+1)
-                                    
-                                }} className='dropdownItems'>Level {idx+1}</p>
+
+                        {props.companies[props.selectedComapany]?.slots?.map((_, idx) => {
+                            return (
+                                <p key={idx} onClick={() => {
+                                    props.setSelectedLevel(idx + 1)
+
+                                }} className='dropdownItems'>Level {idx + 1}</p>
                             )
                         })}
-                      
+
                     </div>
                 </div>
             </div>
 
             <div className='parkingContainer'>
                 <div className='parkingImageContainer'>
-                    <img className='parkingImage' src={"https://8000-shashankcryptoco-psm02-66jig9x3id9.ws-us104.gitpod.io/video_feed1"} alt="Parking" />
+                    <img className='parkingImage' src={`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/${url}`} alt="Parking" />
                 </div>
                 <div className='SlotsContainer'>
                     <p className='slotHead'>Slot ID's</p>
-                    <p className='slotContent'>G1</p>
-                    <p className='slotContent'>G2</p>``
-                    <p className='slotContent'>G3</p>
-                    <p className='slotContent'>G4</p>
+                        {slots1?.map((slot, idx) => {
+                            return (
+                                <p key={idx} className='slotContent'>{slot}</p>
+                            )
+                        })}
+
                 </div>
             </div>
         </div>
