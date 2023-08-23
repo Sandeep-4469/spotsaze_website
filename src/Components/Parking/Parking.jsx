@@ -6,6 +6,7 @@ import axios from 'axios';
 export default function Parking(props) {
     const [selected, setSelected] = useState(1)
     const [slots1, setSlots] = useState();
+    const [noofSlots,setnoofSlots] = useState(0)
     const [url, seturl] = useState();
     useEffect(() => {
 
@@ -13,6 +14,7 @@ export default function Parking(props) {
             axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/slots/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
                 console.log(res.data)
                 setSlots(res.data.slotname)
+                setnoofSlots(res.data.slots)
             })
 
             axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/video/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
@@ -42,7 +44,7 @@ export default function Parking(props) {
                             <p>Level {props.selectedLevel}</p>
                             <FaChevronDown />
                         </div>
-                        <p className='dropdownSlots'>{slots1.length}</p>
+                        <p className='dropdownSlots'>{noofSlots}</p>
                     </div>
                     <div className="dropdown-content">
 

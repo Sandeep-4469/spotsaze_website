@@ -5,7 +5,7 @@ export default function SideBar(props) {
     <div className='sideBarMainContainer'>
       <div className='sideBarHeadContainer'>
 
-        <h1 className='sideBarMainHead'>SportSaze</h1>
+        <h1 className='sideBarMainHead'>SpotSaze</h1>
         <h1 className='sideBarCompanyHead'>Companies</h1>
       </div>
 
