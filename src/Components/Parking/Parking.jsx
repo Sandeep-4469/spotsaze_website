@@ -11,13 +11,13 @@ export default function Parking(props) {
     useEffect(() => {
 
         try {
-            axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/slots/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
+            axios.get(`https://spotsaze-dw5whmz2hq-ue.a.run.app/slots/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
                 console.log(res.data)
                 setSlots(res.data.slotname)
                 setnoofSlots(res.data.slots)
             })
 
-            axios.get(`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/video/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
+            axios.get(`https://spotsaze-dw5whmz2hq-ue.a.run.app/video/?i=${props.selectedComapany + 1}&l=${props.selectedLevel}`,).then((res) => {
                 console.log(res.data)
                 seturl(res.data)
             })
@@ -63,7 +63,7 @@ export default function Parking(props) {
 
             <div className='parkingContainer'>
                 <div className='parkingImageContainer'>
-                    <img className='parkingImage' src={`https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/${url}`} alt="Parking" />
+                    <img className='parkingImage' src={`https://spotsaze-dw5whmz2hq-ue.a.run.app/${url}`} alt="Parking" />
                 </div>
                 <div className='SlotsContainer'>
                     <p className='slotHead'>Slot ID's</p>

@@ -13,7 +13,7 @@ export default function Home() {
     const getCompanies = ()=>{
       
       try {
-          axios.get("https://8000-sandeep4469-psm03-oejt8n30q2k.ws-us104.gitpod.io/companies").then((res)=>{
+          axios.get("https://spotsaze-dw5whmz2hq-ue.a.run.app/companies").then((res)=>{
             setCompanies(res.data)
           })
           
